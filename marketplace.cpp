@@ -18,7 +18,7 @@ using namespace std;
 
 class Usuario {
     public:
-    int id; // número incremental
+    int id; 
     string email;
     string nome;
     string senha_hash; // Senha em hash
