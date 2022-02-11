@@ -74,7 +74,6 @@ class Marketplace {
          * @return True se o cadastro foi realizado com sucesso, false caso contrário.
          */
         bool me_cadastrar(string nome, string email, string senha) {
-            for(auto nome: nome){
             auto it = usuarios.find(email);
             if (it == usuarios.end()) {
                 Usuario novo_usuario;
