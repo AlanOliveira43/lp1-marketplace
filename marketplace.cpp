@@ -127,7 +127,7 @@ class Marketplace {
             Loja nloja;
             Usuario n;
             int v = v_token(token);
-            for (auto nome : nome){
+            for (auto loja : nome){
               if(nLoja.nome == nome){
                 return int id;
               }
