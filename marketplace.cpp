@@ -1,3 +1,4 @@
+
 /**
  * @file marketplace.cpp
  * @author Isaac Franco (isaacfranco@imd.ufrn.br)
@@ -18,7 +19,7 @@ using namespace std;
 
 class Usuario {
     public:
-    int id; 
+    int id; // número incremental
     string email;
     string nome;
     string senha_hash; // Senha em hash
@@ -73,13 +74,11 @@ class Marketplace {
          * @return True se o cadastro foi realizado com sucesso, false caso contrário.
          */
         bool me_cadastrar(string nome, string email, string senha) {
-            // TODO(opcional) Implementar
-            // Buscando usuário com e-mail no cadastro
+            for(auto nome: nome){
             auto it = usuarios.find(email);
-            // Se não existir, cria um novo usuário
             if (it == usuarios.end()) {
                 Usuario novo_usuario;
-                novo_usuario.id = usuarios.size() + 1; //podemos fazer assim pois não existe remoção
+                novo_usuario.id = usuarios.size() + 1;
                 novo_usuario.email = email;
                 novo_usuario.nome = nome;
                 novo_usuario.senha_hash = geraHash(senha);
@@ -126,9 +125,16 @@ class Marketplace {
          * uma loja com esse nome já exista no marketplace
          */
         int criar_loja(string token, string nome) {
-            // TODO Implementar
+            Loja nloja;
+            Usuario n;
+            int v = v_token(token);
+            for (auto nome : nome){
+              if(nLoja.nome == nome){
+                return int id;
+              }
+            }
             return -1;
-        }
+          }
 
         /**
          * Adicionando produtos em uma loja(pelo id) de um usuário(pelo token).
@@ -138,7 +144,8 @@ class Marketplace {
          * @return Um id do produto adicionado para ser usado em outras operações
          */
         int adicionar_produto(string token, int loja_id, string nome, float preco) {
-            // TODO Implementar
+            int v = v_token(token);
+            map<int, Loja> :: iterator it;
             return -1;
         }
 
@@ -152,7 +159,7 @@ class Marketplace {
          * @return retornar novo estoque
          */
         int adicionar_estoque(string token, int loja_id, int produto_id, int quantidade) {
-            // TODO Implementar
+            map<string, int>::iterator it;
             return -1;
         }
 
@@ -170,7 +177,7 @@ class Marketplace {
          * @return True se a operação foi bem sucedida, false caso contrário
          */
         bool transferir_produto(string token, int loja_origem_id, int loja_destino_id, int produto_id) {
-            // TODO Implementar
+            map<string, int>::iterator it;
             return false;
         }
 
@@ -195,7 +202,11 @@ class Marketplace {
          */
         vector<Produto> buscar_produtos(string nome_parcial, int loja_id) {
             vector<Produto> encontrados;
-            // TODO Implementar
+            for(auto Produto : encontrados){
+              if(encontrados == 0 ){
+                cout("Não foi possivel achar o produto")
+              }
+            }
             return encontrados;
         }
 
@@ -207,7 +218,11 @@ class Marketplace {
          */
         vector<Loja> buscar_lojas(string nome_parcial) {
             vector<Loja> encontradas;
-            // TODO Implementar
+            for(auto Loja : encontradas){
+              if(encontradas == 0 ){
+                cout("Não foi possivel achar a loja")
+              }
+            }
             return encontradas;
         }
 
@@ -345,3 +360,15 @@ int main() {
     }
 
 }
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
